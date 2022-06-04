@@ -18,7 +18,7 @@ def execute():
     for line in lines:
         if line:
             ori_data = line.split()
-            if len(ori_data)>2 or ori_data[0].isdigit() or not ori_data[1].isdigit():
+            if len(ori_data) != 2 or ori_data[0].isdigit() or not ori_data[1].isdigit():
                 msg.showerror('错误', '请检查格式，一行只能有姓名和电话。')
                 return
             new_data = f'BEGIN:VCARD\nVERSION:3.0\nFN:{ori_data[0]}\nTEL;VALUE=text:{ori_data[1]}\nEND:VCARD\n'
